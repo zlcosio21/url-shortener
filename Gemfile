@@ -11,6 +11,9 @@ gem "securerandom"
 # Uri
 gem "uri"
 
+# will_paginate
+gem 'will_paginate'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

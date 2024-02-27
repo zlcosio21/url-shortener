@@ -1,5 +1,6 @@
 require 'securerandom'
 require 'uri'
+require 'will_paginate'
 
 class UrlsController < ApplicationController
 
@@ -16,7 +17,7 @@ class UrlsController < ApplicationController
   end
 
   def show
-    urls = Url.all
+    urls = Url.paginate(page: params[:page], per_page: 10)
     render json: urls
   end
 
@@ -30,7 +31,7 @@ class UrlsController < ApplicationController
 
     unless validate_url(url_complete)
       flash[:alert] = "Invalid URL"
-      return redirect_to new_url_path
+      return redirect_to root_url
     end
 
     @url = Url.new(url_params)
@@ -40,7 +41,7 @@ class UrlsController < ApplicationController
       redirect_to root_url(url_short: @url.url_short)
     else
       flash[:alert] = "The shortened URL already exists"
-      redirect_to new_url_path
+      redirect_to root_url
     end
 
   end
