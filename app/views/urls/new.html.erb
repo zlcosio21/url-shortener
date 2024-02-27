@@ -1,0 +1,34 @@
+<div class="container">
+  <% if @url_short.present? %>
+
+    <div>
+      <h2 class="title">Your short URL is:</h2>
+      <a href="/<%= @url_short %>">
+        <span class="url">localhost:3000/<%= @url_short %></span>
+      </a>
+
+      <br><br><br>
+
+      <h2 class="title">
+        <a href="<%= root_url %>" class="back-link">Back</a>
+      </h2>
+    </div>
+
+  <% else %>
+
+    <%= form_with(model: @url) do |form| %>
+      <div>
+        <h2 class="title">Shorten a URL</h2>
+        <span>Put Your URL</span>
+        <%= form.text_field :url_complete, placeholder: "Enter the URL", required: true %>
+        <%= form.hidden_field :count_visits, value: 0 %>
+        <button type="submit" name="commit" value="Create Url" data-disable-with="Create Url">Shorten</button>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <span> <%= flash[:alert] %> </span>
+    <% end %>
+
+  <% end %>
+</div>
