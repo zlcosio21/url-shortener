@@ -1,9 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  url_complete: MyString
-  url_short: MyString
+  url_complete: https://github.com/zlcosio21
+  url_short:  gtcos
 
 two:
-  url_complete: MyString
-  url_short: MyString
+  url_complete: https://zlcosio21.me
+  url_short: cosio
+
+three:
+  url_complete: https://example1.com
+  url_short: cosio
+
+four:
+  url_complete: https://example2.com
+  url_short: cosio
+
+five:
+  url_complete: https://example3.com
+  url_short: cosio

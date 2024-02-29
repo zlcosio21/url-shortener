@@ -11,6 +11,9 @@ gem "securerandom"
 # Uri
 gem "uri"
 
+# Testing
+gem 'rails-controller-testing'
+
 # will_paginate
 gem 'will_paginate'
 
